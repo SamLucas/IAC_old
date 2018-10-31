@@ -1,0 +1,66 @@
+
+
+@media screen and (max-width: 767px) {
+
+	.arrumalogin{ margin-left: 50px; }
+	.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 15px; padding-right: 15px; } 
+
+	.navbar .nav-collapse { margin: 7.5px auto; padding: 0; margin-left: 20px;}
+	.navbar .nav-collapse .navbar-form { margin: 0; }
+	.nav-collapse>li { float: none; }
+
+	.navbar.navbar-default .nav-collapse,
+	.navbar.navbar-inverse .nav-collapse {
+		transform: translate(-100%,0px);
+	}
+	.navbar.navbar-default .nav-collapse.in,
+	.navbar.navbar-inverse .nav-collapse.in {
+		transform: translate(0px,0px);
+	}
+
+	.navbar.navbar-default .nav-collapse.slide-down,
+	.navbar.navbar-inverse .nav-collapse.slide-down {
+		transform: translate(0px,-100%);
+	}
+	.navbar.navbar-default .nav-collapse.in.slide-down,
+	.navbar.navbar-inverse .nav-collapse.in.slide-down {
+		transform: translate(0px,0px);
+	}
+}
+
+@media(max-width:768px){
+	#login-dp{
+		background-color: inherit;
+	}
+	#login-dp .bottom{
+		background-color: inherit;
+		border-top:0 none;
+	}
+}
+
+@media screen and (max-width: 484px){
+	.myfooter .samuel {display: none;}
+	.myfooter .logoif {display: block;margin: 0 auto;}
+}
+
+@media screen and (max-width: 991px){
+	.sobrehome {margin-top: 10px; }
+	.celular {display: block;}
+	.computador, .pc{display: none;}
+	.imagemmembro {margin-bottom: 20px;}
+	.titulo::after {
+		content: "";
+		background-image: url('../../img/icones/topo.png');
+		background-repeat: no-repeat;
+		height: 150px;
+		background-position: 50% 0;
+		/*background-attachment: fixed;*/
+		position: absolute;
+		opacity: 0.5;
+		z-index: -1;
+		top: -10px;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+}

@@ -1,0 +1,15 @@
+   *{margin: 0;padding: 0;} 
+   /*#myCarousel {max-width: 1200px;height: 300px;}*/
+   #myCarousel .nav a small {display:block;}
+   #myCarousel .nav {background:#eee;}
+   #myCarousel .nav a {border-radius:0px;}
+
+   .nav-justified > li > a { border-radius: 0px;color: rgba(0,0,0,0.5);}
+
+   .nav-pills>li[data-slide-to="0"].active a { background-color: #16a085; color: white; }
+   .nav-pills>li[data-slide-to="1"].active a { background-color: #e67e22; color: white; }
+   .nav-pills>li[data-slide-to="2"].active a { background-color: #2980b9; color: white; }
+   .nav-pills>li[data-slide-to="3"].active a { background-color: #8e44ad; color: white; }
+
+   .item {border-bottom: 2px solid green;color: green;}
+

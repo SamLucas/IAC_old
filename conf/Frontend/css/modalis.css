@@ -1,0 +1,85 @@
+
+li.active a{color: red;}
+
+.textcorriculum {text-indent: 20px;text-align: justify;}
+.navdireita {
+	margin: 0px;
+	padding: 0px;
+	margin-left: -10px;
+	color: red;
+}
+
+.iconelist{margin-bottom: -20px;}
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {background: green;color: white; };
+a:hover  {
+	display: none;
+	text-decoration: none;
+}
+.tabs {s
+	float: none;
+	list-style: none;
+	position: relative;
+	margin: 80px 0 0 10px;
+}
+.tabs li {
+	float: left;
+	display: block;
+}
+.tabs input[type="radio"] {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+.tabs label {
+	display: block;
+	padding: 14px 21px;
+	border-radius: 2px 2px 0 0;
+	font-size: 20px;
+	background: #ccc;
+	cursor: pointer;
+	position: relative;
+	top: 4px;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.tabs [id^="tab"]:checked + p {
+	color:black;
+	-moz-transition: all 2.2s ease-in-out;
+	-o-transition: all 2.2s ease-in-out;
+	-webkit-transition: all 2.2s ease-in-out;
+	transition: all 2.2s ease-in-out;
+}
+.tabs label:hover {
+	background: #fff;
+}
+.tabs .tab-content {
+	z-index: 2;
+	display: none;
+	overflow: hidden;
+	width: 100%;
+	font-size: 17px;
+	line-height: 25px;
+	padding: 25px;
+	position: absolute;
+	top: 53px;
+	left: 0;
+	background: #fff;
+}
+.tabs [id^="tab"]:checked + label {
+	background: #fff;
+}
+.tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+	display: block;
+}
+
+
+.input-group-addon {color: #fff;background: #3276B1;}
+.modal-footer { height: 70px; margin: 0;}
+.modal-footer .btn { font-weight: bold;}
+.modal-footer .progress {
+	display: none;
+	height: 32px;
+	margin: 0;
+}
