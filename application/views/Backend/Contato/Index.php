@@ -1,8 +1,8 @@
 <div id="page-wrapper">
 	<div class="container-fluid">
 		<div class="white-box" >
-			<div class="row">		
-				<div class="col-12">
+			<div class="row">	
+				<div class="col-12 cabecalho-painel">
 					<h4 class="">Contato</h4>
 				</div><hr>
 

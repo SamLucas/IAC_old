@@ -33,6 +33,8 @@
     <link href="<?=base_url('conf/font-awesome-4.7.0/css/font-awesome.min.css'); ?>" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<?=base_url('conf/Backend/css/style.css'); ?>" rel="stylesheet">
+    
+    <link href="<?=base_url('conf/Backend/css/my_css_back.css'); ?>" rel="stylesheet">
     <!-- color CSS -->
     <link href="<?=base_url('conf/Backend/css/colors/green-dark.css'); ?>" id="theme" rel="stylesheet">
 </head>
@@ -62,10 +64,10 @@
                     <ul class="nav navbar-top-links navbar-right pull-right">
                         <li>
                             <a href="#" class="profile-pic dropdown-toggle" data-toggle="dropdown">
-                                <b class="hidden-xs">Bem vindo! <?=$this->session->primeiro_nome?></b>
+                                <b class="">Bem vindo!</b> 
                                 <span class="caret"></span>
                             </a>             
-                            <ul class="dropdown-menu" role="menu">
+                            <ul class="dropdown-menu pull-left" role="menu">
                                 <li><a href="<?=base_url(''); ?>">Site</a></li>
                                 <li><a href="<?=base_url('Backend/Perfil'); ?>">Perfil</a></li>
                                 <li class="divider"></li>
