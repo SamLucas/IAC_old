@@ -2,19 +2,18 @@
 	<div class="container-fluid">
 
 		<div class="row bg-title">
-			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+			<div class="col-lg-9 col-sm-8 col-md-8 col-xs-8">
 				<h4 class="page-title">Membros</h4>
 			</div>
-			<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-				<a href="" data-toggle="modal" data-target="#modal-cadastrar" class="btn btn-success pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">
+			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
+				<a href="" data-toggle="modal" data-target="#modal-cadastrar" class="btn btn-success pull-right m-l-20 btn-rounded btn-outline waves-effect waves-light">
 					Adicionar
 				</a>
 			</div>
 		</div>
-
 		<div class="white-box">
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-sm-12 table-responsive">
 					
 					<?php if(isset($type)): ?>
 						<div class="col-sm-12 <?=$type?>">
@@ -22,7 +21,7 @@
 						</div>
 					<?php endif; ?>
 
-					<table class="table table-responsive">
+					<table class="table">
 						<thead>
 							<tr>
 								<th>NOME</th>
@@ -39,7 +38,6 @@
 										
 										<button class="btn btn-primary btn-outline btn-rounded" data-toggle="modal" data-target="<?php echo '#'.$mem->mem_id; ?>" title="visualizar"><i class="fa fa-eye"></i></button>
 										<button class="btn btn-success btn-outline btn-rounded" data-toggle="modal" data-target="#modalalterar" data-id='<?=$mem->mem_id; ?>' data-nome='<?=$mem->mem_nome; ?>' data-descricao='<?=$mem->mem_descricao?>' data-lattes='<?=$mem->mem_lattes; ?>' data-foto='<?=$mem->mem_foto?>'  title="Editar"><i class="fa fa-edit"></i></button>
-										<button class="btn btn-primary btn-rounded btn-outline" data-toggle="modal" data-target="#modalexcluirfoto" data-id='<?=$mem->mem_id; ?>' data-nome='<?=$mem->mem_nome; ?>'  title="Remover a foto do membro"><i class="fa fa-camera"></i></button>
 										<button class="btn btn-danger btn-outline btn-rounded"  data-toggle="modal" data-target="#modalexcluir" data-id='<?=$mem->mem_id; ?>' data-nome='<?=$mem->mem_nome; ?>'  title="Deletar cadastro"><i class="fa fa-trash"></i></button>
 									</td>
 								</tr>
@@ -120,19 +118,28 @@
 							<label for="Text">Texto:</label>
 							<textarea name="descricao_alt" class="ckeditor" id="descricao_alt" cols="80" rows="20"></textarea>
 						</div>
-						<div class="form-group" id="foto-altera">
-							<input type="hidden" name="muda_foto" id="muda_foto">
-							<label for="foto">Foto atual: <strong id="alt_foto"></strong></label>
-							<div class="form-inline">
-								<a class="col-1 btn btn-danger" onclick="tirafoto()" title="Remover foto"><i class="fa fa-trash"></i></a>
+						<div class="form-group">
+							<label class="" for="">Foto atual: <strong id="alt_foto"></strong></label>
+							<div class="input-group">
+								<a class="btn btn-danger input-group-addon" onclick="tirafoto()" title="Remover foto">
+									<i style="color: white;" class="fa fa-trash"></i>
+								</a>
 								<input class="form-control" type="file" name="foto" id="foto">
 							</div>
+						</div>
+						<div class="input-group" id="foto-altera">
+							
+							
+
+							
 							
 						</div>
 						<div class="form-group">
 							<label for="lates">Link corriculum lates:</label>
 							<input type="text" class="form-control" id="lattes" name="lattes">
 						</div>
+						
+						<input type="hidden" name="muda_foto" id="muda_foto">
 						<input type="hidden" name="id" id="id">
 
 					</form>
@@ -164,29 +171,6 @@
 			</div>
 			<div class="modal-footer">
 				<button type="submit" class="btn btn-danger btn-outline btn-rounded" onclick="document.forms['comfirmar_exclusao'].submit();">Excluir</button>
-				<button type="button" class="btn btn-success btn-outline btn-rounded" data-dismiss="modal">Fechar</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="modal fade" id="modalexcluirfoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				<h5 class="modal-title" id="exampleModalLabel">Remover foto</h5>
-			</div>
-			<div class="modal-body">
-				<p>Deseja remover a foto do membro: "<aa id="campo-nome-excluir-foto"></aa>" ?</p>
-				<form action="<?= base_url('Backend/Membros/deletarfoto');?>" method="post" id="comfirmar_exclusao_foto">
-					<input type="hidden" name="id">
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button type="submit" class="btn btn-danger btn-outline btn-rounded" onclick="document.forms['comfirmar_exclusao_foto'].submit();">Excluir</button>
 				<button type="button" class="btn btn-success btn-outline btn-rounded" data-dismiss="modal">Fechar</button>
 			</div>
 		</div>
@@ -246,17 +230,6 @@
 
 		var modal = $(this)
 		modal.find('.modal-body #campo-nome-excluir').text(nome)
-		modal.find('.modal-body form input').val(id)
-
-	})
-
-	$('#modalexcluirfoto').on('show.bs.modal', function (event) {
-		var button = $(event.relatedTarget) 
-		var nome = button.data('nome') 
-		var id = button.data('id')
-
-		var modal = $(this)
-		modal.find('.modal-body #campo-nome-excluir-foto').text(nome)
 		modal.find('.modal-body form input').val(id)
 
 	})

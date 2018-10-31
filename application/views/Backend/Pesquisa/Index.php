@@ -2,11 +2,11 @@
 	<div class="container-fluid">
 
 		<div class="row bg-title">
-			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+			<div class="col-lg-9 col-sm-8 col-md-8 col-xs-8">
 				<h4 class="page-title">Linhas de Pesquisa</h4>
 			</div>
-			<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-				<a href="<?php echo base_url('Backend/Pesquisa/adicionar'); ?>" class="btn btn-success pull-right m-l-20 c btn-outline btn-rounded hidden-xs hidden-sm waves-effect waves-light">
+			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
+				<a href="<?php echo base_url('Backend/Pesquisa/adicionar'); ?>" class="btn btn-success pull-right m-l-20 c btn-outline btn-rounded waves-effect waves-light">
 					Adicionar
 				</a>
 			</div>
@@ -38,11 +38,11 @@
 											<td class="txt-oflo"><?= substr($art->ldp_titulo, 0, 30).'...'; ?></td>
 											<td class="txt-oflo"><?= substr($art->ldp_professores, 0, 30).'...';?></td>
 											<td>
-												<a href="<?=base_url('Backend/Papers')?>/index/?id=<?=$art->ldp_id?>&nome=<?=$art->ldp_titulo?>" class="btn btn-primary btn-outline btn-rounded">Papers</a>
-												<button class="btn btn-primary btn-outline btn-rounded" data-toggle="modal" data-target="<?php echo '#'.$art->ldp_id; ?>">
-												Visualizar</button>
-												<a class="btn btn-success btn-outline btn-rounded" href="<?php echo base_url('Backend/Pesquisa/alterar/') ?>?id=<?php echo $art->ldp_id ?>">Alterar</a>
-												<a class="btn btn-danger btn-outline btn-rounded" data-toggle="modal" data-target="#modalexcluir" data-id="<?php echo $art->ldp_id; ?>" data-nome='<?php echo $art->ldp_titulo; ?>' >Excluir</a>
+												<a href="<?=base_url('Backend/Papers')?>/index/?id=<?=$art->ldp_id?>&nome=<?=$art->ldp_titulo?>" class="btn btn-primary btn-outline btn-rounded" title="Papers"><i class="fa fa-file"></i></a>
+												<button class="btn btn-primary btn-outline btn-rounded" data-toggle="modal" data-target="<?php echo '#'.$art->ldp_id; ?>" title="Visualizar">
+												<i class="fa fa-eye"></i></button>
+												<a class="btn btn-success btn-outline btn-rounded" href="<?php echo base_url('Backend/Pesquisa/alterar/') ?>?id=<?php echo $art->ldp_id ?>" title="Editar"><i class="fa fa-edit"></i></a>
+												<a class="btn btn-danger btn-outline btn-rounded" data-toggle="modal" data-target="#modalexcluir" data-id="<?php echo $art->ldp_id; ?>" data-nome='<?php echo $art->ldp_titulo; ?>' title="Deletar cadastro"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
 									<?php endforeach; ?>

@@ -2,11 +2,11 @@
 	<div class="container-fluid">
 
 		<div class="row bg-title">
-			<div class="col-lg-10 col-md-4 col-sm-4 col-xs-12">
+			<div class="col-lg-9 col-sm-8 col-md-8 col-xs-8">
 				<h4 class="page-title">Papers - <?=substr($linha_nome,0,60)."..."; ?></h4>
 			</div>
-			<div class="col-lg-2 col-sm-8 col-md-8 col-xs-12">
-				<a class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light btn-rounded btn-outline" data-toggle="modal" data-target="#cadastrar">
+			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
+				<a class="btn btn-success pull-right m-l-20 waves-effect waves-light btn-rounded btn-outline" data-toggle="modal" data-target="#cadastrar">
 					Adicionar
 				</a>
 			</div>
@@ -42,8 +42,8 @@
 											<td><?=$pap->pap_autor ?></td>
 											<td><?=$pap->pap_arquivo ?></td>
 											<td>
-												<button class="btn btn-outline btn-rounded btn-danger"  data-toggle="modal" data-target="#deletar" data-nome="<?=$pap->pap_nome ?>" data-id="<?=$pap->pap_id ?>">Deletar</button>
-												<button class="btn btn-outline btn-rounded btn-success" data-toggle="modal" data-target="#alterar" data-nome='<?=$pap->pap_nome ?>' data-descricao='<?=$pap->pap_descricao ?>' data-arquivo='<?=$pap->pap_arquivo?>' data-autor='<?=$pap->pap_autor ?>' data-id='<?=$pap->pap_id ?>'>Alterar</button>
+												<button class="btn btn-outline btn-rounded btn-success" data-toggle="modal" data-target="#alterar" data-nome='<?=$pap->pap_nome ?>' data-descricao='<?=$pap->pap_descricao ?>' data-arquivo='<?=$pap->pap_arquivo?>' data-autor='<?=$pap->pap_autor ?>' data-id='<?=$pap->pap_id ?>' title="Editar"><i class="fa fa-edit"></i></button>
+												<button class="btn btn-outline btn-rounded btn-danger"  data-toggle="modal" data-target="#deletar" data-nome="<?=$pap->pap_nome ?>" data-id="<?=$pap->pap_id ?>" title="Deletar cadastro"><i class="fa fa-trash"></i></button>
 											</td>
 											<!-- <button class="btn btn-outline btn-rounded btn-info">asd</button> -->
 										</tr>

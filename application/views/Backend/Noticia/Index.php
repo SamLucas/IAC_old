@@ -2,46 +2,47 @@
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row bg-title">
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-8">
                     <h4 class="page-title">Minhas Noticias</h4>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
                     <a href="<?=base_url('Backend/Noticia/adicionar')?>" class="btn btn-rounded btn-outline btn-success pull-right">Nova noticía</a>
 
                 </div>
             </div>
 
-            <div class="white-box col-sm-12">
-
-                <?php if($type != null): ?>
-                <div class="col-sm-12 <?=$type?>">
-                    <strong><?=$titulo?></strong> <?=$mensage?>
-                </div>
-                <?php endif; ?>
+            <div class="white-box col-sm-12 ">
                 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>TITULO</th>
-                            <th>AUTOR</th>
-                            <th>AÇÃO</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($noticias as $not): ?>
+               <div class="table-responsive">
+                <?php if($type != null): ?>
+                   <div class="col-sm-12 <?=$type?>">
+                       <strong><?=$titulo?></strong> <?=$mensage?>
+                   </div>
+                   <?php endif; ?>
+                   
+                   <table class="table">
+                       <thead>
                            <tr>
-                                <td><?=$not->not_titulo?></td>
-                                <td><?=$not->not_autor?></td>
-                                <td>
-                                    <a href="<?= base_url('Backend/Noticia/ativa')."?id=".$not->not_id ?>" class="btn btn-rounded <?php echo $not->not_ativo%2!=0 ? 'btn-success':'btn-danger' ?> btn-outline "><?php echo $not->not_ativo%2!=0 ? 'Ativado':'Desativado' ?></a>
-                                    <a href="<?=base_url('Backend/Noticia/alterar')."?id=".$not->not_id?>" class="btn btn-rounded btn-info btn-outline">Editar</a>
-                                    <button class="btn btn-rounded btn-danger btn-outline" data-toggle="modal" data-nome="<?=$not->not_titulo?>" data-id="<?=$not->not_id?>" data-target="#modal-excluir" >Excluir</button>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-                        <?php if(!$noticias) echo "<br><p class='text-center'>Nenhum arquivo cadastrado</p>"; ?>
+                               <th>TITULO</th>
+                               <th>AUTOR</th>
+                               <th>AÇÃO</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <?php foreach ($noticias as $not): ?>
+                              <tr>
+                                   <td><?=$not->not_titulo?></td>
+                                   <td><?=$not->not_autor?></td>
+                                   <td>
+                                       <a href="<?= base_url('Backend/Noticia/ativa')."?id=".$not->not_id ?>" class="btn btn-rounded <?php echo $not->not_ativo%2!=0 ? 'btn-success':'btn-danger' ?> btn-outline "><?php echo $not->not_ativo%2!=0 ? 'Ativado':'Desativado' ?></a>
+                                       <a href="<?=base_url('Backend/Noticia/alterar')."?id=".$not->not_id?>" class="btn btn-rounded btn-info btn-outline" title="Editar"><i class="fa fa-edit"></i></a>
+                                       <button class="btn btn-rounded btn-danger btn-outline" data-toggle="modal" data-nome="<?=$not->not_titulo?>" data-id="<?=$not->not_id?>" data-target="#modal-excluir" title="Deletar cadastro"><i class="fa fa-trash"></i></button>
+                                   </td>
+                               </tr>
+                           <?php endforeach; ?>
+                       </tbody>
+                   </table>
+                           <?php if(!$noticias) echo "<br><p class='text-center'>Nenhum arquivo cadastrado</p>"; ?></div>
             </div>
         </div>
     </div>

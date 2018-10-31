@@ -2,11 +2,11 @@
 	<div class="container-fluid">
 
 		<div class="row bg-title">
-			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+			<div class="col-lg-9 col-sm-8 col-md-8 col-xs-8">
 				<h4 class="page-title">Download</h4>
 			</div>
-			<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-				<a href="<?php echo base_url('Backend/Download/cadastra') ?>" class="btn btn-success pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">
+			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
+				<a href="<?php echo base_url('Backend/Download/cadastra') ?>" class="btn btn-success pull-right m-l-20 btn-rounded btn-outline waves-effect waves-light">
 					Adicionar
 				</a>
 			</div>
@@ -43,8 +43,8 @@
 										<td class="txt-oflo"><?= $arq->dow_tamanho ?> Mb</td>
 										<td class="txt-oflo"><?= $arq->dow_tipo ?></td>
 										<td>
-											<a href="<?= base_url('Backend/Download/busca');?>?id=<?= $arq->dow_id ?>" class="btn btn-success btn-rounded btn-outline">Alterar</a>
-											<button class="btn btn-danger btn-rounded btn-outline" data-toggle="modal" data-target="#deletar" data-id="<?= $arq->dow_id ?>" data-nome='<?= $arq->dow_identificacao ?>'>Excluir</button>
+											<a href="<?= base_url('Backend/Download/busca');?>?id=<?= $arq->dow_id ?>" class="btn btn-success btn-rounded btn-outline" title="Editar"><i class="fa fa-edit"></i></a>
+											<button class="btn btn-danger btn-rounded btn-outline" data-toggle="modal" data-target="#deletar" data-id="<?= $arq->dow_id ?>" data-nome='<?= $arq->dow_identificacao ?>' title="Deletar cadastro"><i class="fa fa-trash"></i></button>
 										</td>
 									</tr>
 
