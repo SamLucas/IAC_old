@@ -12,8 +12,8 @@ class MY_Controller extends CI_Controller {
         'protocol' => 'smtp',
         'smtp_host' => 'ssl://smtp.googlemail.com',
         'smtp_port' => 465,
-        'smtp_user' => 'samuellucas0603@gmail.com',
-        'smtp_pass' => 'loopinfinito',
+        'smtp_user' => 'email@gmail.com',
+        'smtp_pass' => 'senha',
         'mailtype'  => 'html', 
         'charset'   => 'utf-8'
     );
