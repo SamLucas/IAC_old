@@ -25,7 +25,7 @@
 		
             $this->load->library('email', $this->config_email);
             $this->email->set_newline("\r\n");
-            $this->email->from($this->session->email);
+            $this->email->from("ricardo.costa@muz.ifsuldeminas.edu.br");
             $this->email->to($email);
             $this->email->subject('IAC (Grupo de Pesquisa Informática Aplicada às Ciências)');
             $this->email->message($mensagem);
