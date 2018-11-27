@@ -51,7 +51,7 @@
                     <i class="fa fa-bars"></i>
                 </a>
                 <div class="top-left-part">
-                    <a class="logo" href="<?=base_url('Backend/Home'); ?>">
+                    <a class="logo" href="<?=site_url('Backend/Index'); ?>">
                         <b>
                             <img src="<?=base_url('conf/Backend/plugins/images/pixeladmin-logo.png'); ?>" alt="home" />
                         </b>
