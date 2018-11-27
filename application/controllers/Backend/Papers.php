@@ -25,11 +25,11 @@ class Papers extends MY_Login {
 		$this->Papers->nome = $this->input->post('nome');
 		$this->Papers->descricao = $this->input->post('descricao');
 		$this->Papers->autor = $this->input->post('autor');
-		$this->Papers->arquivo = $_FILES['arquivo']['name'];
+		$this->Papers->arquivo = str_replace(' ','_',$_FILES['arquivo']['name']);;
 		$this->Papers->alterar();
 
 		if($_FILES['arquivo'] != null) {
-			$nome = $_FILES['arquivo']['name'];
+			$nome = str_replace(' ','_',$_FILES['arquivo']['name']);;
 			$caminho = "./upload/papers/".$this->input->post('id_linha');
 			$configuracao = array(
 				'upload_path'   => $caminho,
@@ -65,9 +65,9 @@ class Papers extends MY_Login {
 		$this->Papers->nome = $this->input->post('nome');
 		$this->Papers->descricao = $this->input->post('descricao');
 		$this->Papers->autor = $this->input->post('autor');
-		$this->Papers->arquivo = $_FILES['arquivo']['name'];
+		$this->Papers->arquivo = str_replace(' ','_',$_FILES['arquivo']['name']);;
 
-		$nome = $_FILES['arquivo']['name'];
+		$nome = str_replace(' ','_',$_FILES['arquivo']['name']);;
 		$caminho = "./upload/papers/".$this->input->post('id_linha');
 		$configuracao = array(
 			'upload_path'   => $caminho,

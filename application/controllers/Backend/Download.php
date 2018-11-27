@@ -63,7 +63,7 @@ class Download extends MY_Login{
 
 		if(empty($_FILES['arquivo'])){
 
-			$nome_arquivo = $_FILES['arquivo']['name'];
+			$nome_arquivo = str_replace(' ','_',$_FILES['arquivo']['name']);
 			$this->load->library('upload',conf_upload("./upload/download",$nome_arquivo));
 			if(!$this->upload->do_upload('arquivo')) {
 				erro_no_sistema_dados_usuario("Download");
@@ -108,7 +108,7 @@ class Download extends MY_Login{
 
 		if(empty($_FILES['arquivo'])){
 			
-			$nome = $_FILES['arquivo']['name'];
+			$nome = str_replace(' ','_',$_FILES['arquivo']['name']);;
 			$arquivo = $_FILES['arquivo'];
 			$tamanho  = 5e+6;
 			$configuracao = array(

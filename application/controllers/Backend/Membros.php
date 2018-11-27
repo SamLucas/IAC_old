@@ -23,11 +23,11 @@ class Membros extends MY_Login {
 		$this->Membros->lattes = $this->input->post('lattes');
 
 		if($_FILES['foto']['type'] != null){
-			$nome_arquivo = $_FILES['foto']['name'];
+			$nome_arquivo = str_replace(' ','_',$_FILES['foto']['name']);
 			$this->Membros->foto = $nome_arquivo;
 			$this->load->library('upload',$this->conf_upload("./img/membros",$nome_arquivo));
 			$this->upload->do_upload('foto');
-		} else $this->Membros->foto = "Sem foto.png";
+		} else $this->Membros->foto = "Sem_foto.png";
 
 		$this->Membros->cadastrar();
 		$data['type'] = "alert alert-success";
@@ -55,9 +55,9 @@ class Membros extends MY_Login {
 		$this->Membros->lattes = $this->input->post('lattes');
 		$this->Membros->id = $this->input->post('id');
 
-		if($this->input->post('muda_foto') == "1") $this->Membros->foto = "Sem foto.png";
+		if($this->input->post('muda_foto') == "1") $this->Membros->foto = "Sem_foto.png";
 		if($_FILES['foto']['type'] != null){
-			$nome_arquivo = $_FILES['foto']['name'];
+			$nome_arquivo = str_replace(' ','_',$_FILES['foto']['name']);;
 			$this->Membros->foto = $nome_arquivo;
 			$caminho = "./img/membros";
 
