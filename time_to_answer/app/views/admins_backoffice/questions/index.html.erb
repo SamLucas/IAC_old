@@ -1,0 +1,71 @@
+<h1 class="h3 mb-2 text-gray-800 mb-3 mt-3">Perguntas</h1>
+
+<div class="card shadow mb-4">
+<div class="card-header py-3">
+  <h6 class="m-0 font-weight-bold text-gray">Repositório de Perguntas</h6>
+</div>
+<div class="card-body">
+  <div class="table">
+    <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid"
+            aria-describedby="dataTable_info" style="width: 100%;">
+            <thead>
+              <tr role="row">
+                <th rowspan="1" colspan="1">Id</th>
+                <th rowspan="1" colspan="1">Descrição</th>
+                <th rowspan="1" colspan="1">AssuntosÁreas</th>
+                <th>
+                  <%= link_to new_admins_backoffice_question_path, class: "btn btn-success btn-icon-split" do %>
+                  <span class="icon text-white-50">
+                    <i class="fas fa-plus"></i>
+                  </span>
+                  <span class="text">Novo</span>
+                  <% end %>
+                </th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th rowspan="1" colspan="1">Id</th>
+                <th rowspan="1" colspan="1">Descrição</th>
+                <th rowspan="1" colspan="1">AssuntosÁreas</th>
+                <th></th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <% @questions.each do |question| %>
+              <tr role="row" lass="odd">
+                <td class=""><%= question.id %></td>
+                <td class=""><%= question.description.truncate(50) %></td>
+                <td class=""><%= question.subject.description.truncate(30) %></td>
+                <td>
+                  <%= link_to edit_admins_backoffice_question_path(question), class: "btn btn-primary btn-icon-split" do %>
+                  <span class="icon text-white-50">
+                    <i class="fas fa-edit"></i>
+                  </span>
+                  <span class="text">Editar</span>
+                  <% end %>
+
+                  <%= link_to admins_backoffice_question_path(question), method: :delete, class: "btn btn-danger btn-icon-split", data: { confirm: "Deseja realmente excluir esse Assunto/Área?" } do %> 
+                    <span class="icon text-white-50">
+                      <i class="fas fa-trash"></i>
+                    </span>
+                    <span class="text">Deletar</span>
+                  <% end %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+          <%= paginate @questions %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
