@@ -1,5 +1,10 @@
 {
   "name": "iac",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "4.1.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "3.3.1",
+    "themify-icons-scss": "^1.0.0"
+  }
 }

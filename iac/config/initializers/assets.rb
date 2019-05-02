@@ -11,4 +11,39 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-# Rails.application.config.assets.precompile += %w( admin.js admin.css )
+
+
+Rails.application.config.assets.precompile += %w( admins.js admins.css )
+
+# Import files lib/js(backentd)
+Rails.application.config.assets.precompile += %w(
+	waves.js
+	chart-page-init.js
+	custom.js
+	excanvas.js
+	jquery.flot.crosshair.js
+	jquery.flot.js
+	jquery.flot.pie.js
+	jquery.flot.stack.js
+	jquery.flot.time.js
+	jquery.flot.tooltip.js
+	perfect.js
+	popper.js
+	sidebarmenu.js
+	sparkline.js
+)
+
+# Import files lib/css(backentd)
+Rails.application.config.assets.precompile += %w(
+	float-chart.css
+	style.css
+)
+
+# Import files lib/img(backentd)
+Rails.application.config.assets.precompile += %w(
+	logo_iac.png
+	1.jpg
+	logo-icon.png
+	logo-text.png
+)
+
