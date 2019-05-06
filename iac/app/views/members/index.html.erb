@@ -1,0 +1,74 @@
+<div class="page-breadcrumb">
+  <div class="row">
+    <div class="col-12 d-flex no-block align-items-center">
+
+      <% if notice %>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
+      <% end %>
+
+      <h4 class="page-title">Adnins Members</h4>
+      
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <div class="ml-auto text-right">
+                <nav aria-label="breadcrumb">
+                  <%= link_to 'Novo membro', new_member_path, class: "btn btn-outline-success", id: "ts-success" %>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+
+          
+          <table class="table table-hover my-4">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Formation</th>
+                <th>Link to lattes</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @members.each do |member| %>
+              <tr>
+                <td><%= member.description %></td>
+                <td><%= strip_tags(member.formation.truncate(25)) %></td>
+                <td><%= member.link_to_lattes %></td>
+                <td>
+                  <%= link_to member, class: "btn btn-outline-primary" do %>
+                  <i class="fa fa-eye"></i> Show
+                  <% end %>
+                  <%= link_to edit_member_path(member), class: "btn btn-outline-info" do %>
+                  <i class="fa fa-edit"></i> Edit
+                  <% end %>
+                  <%= link_to member, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" do %>
+                  <i class="fa fa-trash"></i> Destroy
+                  <% end %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+          <%= paginate @members, theme: 'twitter-bootstrap-4',
+          pagination_class: "pagination-sm",
+          nav_class: "d-inline-b" %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

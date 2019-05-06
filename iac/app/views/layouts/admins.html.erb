@@ -103,8 +103,9 @@
                   <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>   
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="template/backend/html/ltr/index.html" target="blank">Template Backend</a>
-                  <a class="dropdown-item" href="template/frontend/dinomuz/index.html" target="blank">Template Frontend</a>
+                  <a class="dropdown-item" href="templates/backend/html/ltr/index.html" target="blank">Template Backend</a>
+                  <a class="dropdown-item" href="templates/frontend/dinomuz/index.html" target="blank">Template Frontend</a>
+                  <a class="dropdown-item" href="rails/info/routes" target="blank">Routes</a>
                 </div>
               </li>
               <!-- ============================================================== -->
@@ -145,7 +146,11 @@
                 <i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span>
                 <% end %>
               </li>
-              
+              <li class="sidebar-item">
+                <%= link_to members_path, class: "sidebar-link waves-effect waves-dark sidebar-link", aria_expanded:"false" do %>
+                <i class="mdi mdi-account-multiple"></i><span class="hide-menu">Membros</span>
+                <% end %>
+              </li>
             </ul>
           </nav>
           <!-- End Sidebar navigation -->
@@ -162,7 +167,7 @@
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-         <%= yield %>
+        <%= yield %>
         
 
         <!-- ============================================================== -->
@@ -191,6 +196,29 @@
 
     <%= javascript_include_tag 'application'%>
     <%= javascript_include_tag 'admins' %>
-  </body>
+    
 
-  </html>
+    <!-- Editor de texto -->
+    <script>
+      $(function() { $('.textarea').froalaEditor() });
+    </script>
+
+    <!-- Popover image-->
+    <script>
+      $(document).ready(function(){
+       $('[data-toggle="popover"]').popover({
+          //trigger: 'focus',
+          trigger: 'hover',
+          html: true,
+          content: function () {
+            return $(this).data('content');
+          },
+          title: 'Toolbox'
+        }) 
+     });
+   </script>
+
+
+ </body>
+
+ </html>

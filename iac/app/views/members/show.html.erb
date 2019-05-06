@@ -1,0 +1,52 @@
+<div class="page-breadcrumb">
+	<div class="row">
+		<div class="col-12 d-flex no-block align-items-center">
+			<h4 class="page-title">New Adnins Member</h4>
+			<div class="ml-auto text-right">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#">Home</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Library</li>
+					</ol>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12">
+
+			<% if notice %>
+			<div class="alert alert-success" role="alert">
+				<p id="notice"><%= notice %></p>
+			</div>
+			<% end %>
+
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-5">
+							<%= image_tag(@member.image) %>
+						</div>
+						<div class="col-7">
+							<h3 class="card-title my-3"><%= @member.description %></h3>
+							<%= @member.formation.html_safe %>
+							<a href="<%= @member.link_to_lattes %>"><h6>Link to latter</h6></a>
+							
+
+							<div class="ml-auto text-right">
+								<%= link_to 'Edit', edit_member_path(@member), class: "btn btn-primary" %>
+								<%= link_to 'Back', members_path, class: "btn btn-primary" %>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

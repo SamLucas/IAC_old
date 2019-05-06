@@ -11,3 +11,4 @@
 //= require sidebarmenu
 //= require custom
 //= require excanvas
+//= require froala_editor.min.js
