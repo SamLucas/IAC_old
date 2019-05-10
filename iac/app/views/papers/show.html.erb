@@ -1,0 +1,58 @@
+<div class="page-breadcrumb">
+  <div class="row">
+    <div class="col-12 d-flex no-block align-items-center">
+      <h4 class="page-title">New Adnins Member</h4>
+      <div class="ml-auto text-right">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Library</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+
+      <% if notice %>
+      <div class="alert alert-success" role="alert">
+        <p id="notice"><%= notice %></p>
+      </div>
+      <% end %>
+
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title my-3"><%= @paper.title %> (<%= @paper.search_line.title %>)</h3>
+          <p><%= @paper.author %></p>
+          <%= @paper.description.html_safe %>
+          
+          <table class="table">
+            <thead>
+              <tr>
+                <td>File name</td>
+                <td>Tipo do aqruivo</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td><%= @paper.file.filename.base %></td>
+                <td><%= @paper.file.filename.extension_with_delimiter %></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="ml-auto text-right">
+            <%= link_to 'Edit', edit_paper_path(@paper), class: "btn btn-primary" %>
+            <%= link_to 'Back', papers_path, class: "btn btn-primary" %>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :site_texts
+  resources :papers
+  resources :search_lines
+  resources :disclosures
 	resources :members
 	root to: 'admins#index'
 

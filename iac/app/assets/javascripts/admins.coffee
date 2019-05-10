@@ -12,3 +12,4 @@
 //= require custom
 //= require excanvas
 //= require froala_editor.min.js
+//= require select2-full

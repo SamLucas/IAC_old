@@ -35,6 +35,7 @@ Rails.application.config.assets.precompile += %w(
 
 # Import files lib/css(backentd)
 Rails.application.config.assets.precompile += %w(
+	materialdesignicons.css
 	float-chart.css
 	style.css
 )
@@ -45,6 +46,7 @@ Rails.application.config.assets.precompile += %w(
 	1.jpg
 	logo-icon.png
 	logo-text.png
+	custom-select.png
 )
 
 # Import files vendor/img(backentd)
@@ -69,3 +71,26 @@ Rails.application.config.assets.precompile += %w(
 	18-member.jpg
 )
 
+# Import files vendor/files/tcc(backentd)
+Rails.application.config.assets.precompile += %w(
+	CT_COTSI_2012_1_05.pdf
+	DanielaPreto_TCCVersaoFINAL.pdf
+	FERNANDO_BUSS_FRESCKI.pdf
+	Gustavo_Oliveira_de_Oliveira_TCC.pdf
+	main.pdf
+	Monografia.pdf
+	Monografia_Johann_Westphall.pdf
+	MONOGRAFIA_Proposta_de_otimização_do_tráfego_da_rede_da_universidade_federal_de_lavras_utilizando_a_técnica_de_spanning_tree_protocol.pdf
+	Paper_Ricardo_Rev_.pdf
+	Portal_do_colaborador_-_Meu_Bridge.pdf
+	R_-_E_-_REGINALDO_JOSE_ATISANO.pdf
+	TCC-ArthurMachadoBranco-Final.pdf
+	tcc0017.pdf
+	TCC_(7).pdf
+	TCC_-_Sistema_para_notarios_utilizando_blockchain.pdf
+	TCC_Documento_Final.pdf
+	TCC_Ile_comArtigoECodigo.pdf
+	TCC_Jose_Luis_Conradi_Hoffmann.pdf
+	TCC_Ricardo_Fritsche_Final.pdf
+	Trabalho_de_Conclus_o_de_Curso___Maurilio_Atila_Carvalho_de_Santana.pdf
+)

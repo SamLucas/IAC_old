@@ -1,0 +1,67 @@
+<div class="page-breadcrumb">
+  <div class="row">
+    <div class="col-12 d-flex no-block align-items-center">
+      <% if notice %>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <h3 class="card-title mt-2">Adnins Members</h3>
+              <div class="ml-auto text-right">
+                <nav aria-label="breadcrumb">
+                  <%= link_to 'Novo membro', new_search_line_path, class: "btn btn-outline-success", id: "ts-success" %>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <table class="table table-hover my-4">     
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Teacher</th>
+                <th>Description</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @search_lines.each do |search_line| %>
+              <tr>
+                <td><%= search_line.title %></td>
+                <td><%= search_line.teacher %></td>
+                <td><%= strip_tags(search_line.description.truncate(50)) %></td>
+                <td>
+                  <%= link_to search_line, class: "btn btn-outline-primary" do %>
+                  <i class="fa fa-eye"></i> Show
+                  <% end %>
+                  <%= link_to edit_search_line_path(search_line), class: "btn btn-outline-info" do %>
+                  <i class="fa fa-edit"></i> Edit
+                  <% end %>
+                  <%= link_to search_line, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" do %>
+                  <i class="fa fa-trash"></i> Destroy
+                  <% end %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+          <%= paginate @search_lines, theme: 'twitter-bootstrap-4',
+          pagination_class: "pagination-sm",
+          nav_class: "d-inline-b" %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

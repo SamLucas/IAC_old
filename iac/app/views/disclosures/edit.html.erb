@@ -1,0 +1,28 @@
+<div class="page-breadcrumb">
+	<div class="row">
+		<div class="col-12 d-flex no-block align-items-center">
+			<h4 class="page-title">Editing Adnins Member</h4>
+			<div class="ml-auto text-right">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#">Home</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Library</li>
+					</ol>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12">
+			
+			<%= render 'form', disclosure: @disclosure %>
+
+			<%= link_to 'Show', @disclosure, class: "btn btn-primary" %> 
+			<%= link_to 'Back', disclosures_path, class: "btn btn-primary" %>
+
+		</div>
+	</div>
+</div>

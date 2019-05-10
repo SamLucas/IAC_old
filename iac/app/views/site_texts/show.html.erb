@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @site_text.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @site_text.description %>
+</p>
+
+<p>
+  <strong>Identification:</strong>
+  <%= @site_text.identification %>
+</p>
+
+<%= link_to 'Edit', edit_site_text_path(@site_text) %> |
+<%= link_to 'Back', site_texts_path %>

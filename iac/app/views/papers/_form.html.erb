@@ -1,0 +1,57 @@
+<div class="card col-12">
+  <div class="card-body">
+    <%= form_with(model: paper, local: true) do |form| %>
+    <% if paper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(paper.errors.count, "error") %> prohibited this paper from being saved:</h2>
+
+      <ul>
+        <% paper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :author %>
+      <%= form.text_field :author, class: "form-control" %>
+    </div>
+
+
+    <div class="form-group">
+      <%= form.label :search_line_id %>
+      <%= form.select("search_line_id", @search_lines,{ include_blank: "Selecione um artigo" },{ class: "select2 form-control custom-select select2-hidden-accessible",  style: "width: 100%; height:36px;" }) %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "form-control textarea" %>
+    </div>  
+  
+    <% if paper.file.attached? %>
+    <div class="custom-file">
+      <%= form.label :file, "#{paper.file.filename.base}#{paper.file.filename.extension_with_delimiter}", class: "custom-file-label" %>
+      <%= form.file_field :file, class: "custom-file-input", id:"validatedCustomFile" %>
+      <div class="invalid-feedback">Example invalid custom file feedback</div>
+    </div>    
+    <% else %>
+    <div class="custom-file">
+      <%= form.label :file, class: "custom-file-label" %>
+      <%= form.file_field :file, class: "custom-file-input", id:"validatedCustomFile" %>
+      <div class="invalid-feedback">Example invalid custom file feedback</div>
+    </div>    
+    <% end %>
+
+    <div class="form-group actions">
+      <%= form.submit "Enviar", class: "btn btn-success my-3" %>
+    </div>
+    <% end %>
+
+  </div>
+</div>

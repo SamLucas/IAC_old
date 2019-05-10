@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="//cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css">
 
 
+
   <!-- Favicon icon -->
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -147,10 +148,34 @@
                 <% end %>
               </li>
               <li class="sidebar-item">
+                <%= link_to search_lines_path, class: "sidebar-link waves-effect waves-dark sidebar-link", aria_expanded:"false" do %>
+                <i class="mdi mdi-search-web"></i><span class="hide-menu">Linhas de pesquisa</span>
+                <% end %>
+              </li>
+              <li class="sidebar-item">
+                <%= link_to papers_path, class: "sidebar-link waves-effect waves-dark sidebar-link", aria_expanded:"false" do %>
+                <i class="mdi mdi-instapaper"></i><span class="hide-menu">Papers</span>
+                <% end %>
+              </li>
+              <li class="sidebar-item">
                 <%= link_to members_path, class: "sidebar-link waves-effect waves-dark sidebar-link", aria_expanded:"false" do %>
                 <i class="mdi mdi-account-multiple"></i><span class="hide-menu">Membros</span>
                 <% end %>
               </li>
+              <li class="sidebar-item">
+                <%= link_to disclosures_path, class: "sidebar-link waves-effect waves-dark sidebar-link", aria_expanded:"false" do %>
+                <i class="mdi mdi-newspaper"></i><span class="hide-menu">Noticias</span>
+                <% end %>
+              </li>
+              <li class="sidebar-item">
+                <%= link_to root_path, class: "sidebar-link waves-effect waves-dark sidebar-link", aria_expanded:"false" do %>
+                <i class="mdi mdi-earth"></i><span class="hide-menu">Site</span>
+                <% end %>
+              </li>
+              
+
+
+
             </ul>
           </nav>
           <!-- End Sidebar navigation -->
@@ -217,6 +242,12 @@
         }) 
      });
    </script>
+   
+   <!-- Select2 -->
+  <script>    
+    $(".select2").select2();
+  </script>
+
 
 
  </body>

@@ -1,0 +1,58 @@
+<div class="page-breadcrumb">
+  <div class="row">
+    <div class="col-12 d-flex no-block align-items-center">
+      <h4 class="page-title">New Adnins Member</h4>
+      <div class="ml-auto text-right">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Library</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+
+      <% if notice %>
+      <div class="alert alert-success" role="alert">
+        <p id="notice"><%= notice %></p>
+      </div>
+      <% end %>
+
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title my-3"><%= @search_line.title %></h3>
+          <p><%= @search_line.teacher %></p>
+          <%= @search_line.description.html_safe %>
+
+          <table class="table table-hover my-2">
+            <thead>
+              <tr>
+                <td>Name Paper</td>
+                <td>Type Paper</td>
+              </tr>
+            </thead>
+            <tbody>
+              <% @search_line.papers.each do |paper| %>
+              <tr>
+                <td><%= paper.file.filename.base %></td>
+                <td><%= paper.file.filename.extension_with_delimiter %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+      <div class="ml-auto text-right">
+        <%= link_to 'Edit', edit_search_line_path(@search_line), class: "btn btn-primary" %>
+        <%= link_to 'Back', search_lines_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>

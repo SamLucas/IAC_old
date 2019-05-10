@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author: MyString
+  description: MyText
+  title: MyString
+  search_lines: one
+
+two:
+  author: MyString
+  description: MyText
+  title: MyString
+  search_lines: two

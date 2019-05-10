@@ -1,0 +1,50 @@
+<div class="card col-12">
+  <div class="card-body">
+    <%= form_with(model: disclosure, local: true) do |form| %>
+    <% if disclosure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(disclosure.errors.count, "error") %> prohibited this disclosure from being saved:</h2>
+      <ul>
+        <% disclosure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_field :description, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :author %>
+      <%= form.text_field :author, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :textnew %>
+      <%= form.text_area :textnew, rows: "10", class: "form-control textarea" %>
+    </div>
+
+    <div class="form-group row">
+      <div class="actions col">
+        <%= form.submit "Enviar", class: "btn btn-block btn-outline-success" %>
+      </div>
+      <div class="actions col-10">
+        <div class="custom-control custom-checkbox mr-sm-2 mt-1">
+          <%= form.check_box :active, class: "custom-control-input", id: "customControlAutosizing3" %>
+          <%= form.label "Marque esta opção para ativar a noticia.", class: "custom-control-label", for: "customControlAutosizing3"%>
+        </div>
+      </div>
+    </div>
+
+
+    <% end %>
+  </div>
+</div>

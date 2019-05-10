@@ -1,15 +1,11 @@
 <div class="page-breadcrumb">
   <div class="row">
     <div class="col-12 d-flex no-block align-items-center">
-
       <% if notice %>
       <div class="alert alert-success" role="alert">
         <%= notice %>
       </div>
-      <% end %>
-
-      <h4 class="page-title">Adnins Members</h4>
-      
+      <% end %> 
     </div>
   </div>
 </div>
@@ -19,19 +15,16 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body">
-
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
+              <h4 class="card-title">Adnins Members</h4>
               <div class="ml-auto text-right">
                 <nav aria-label="breadcrumb">
                   <%= link_to 'Novo membro', new_member_path, class: "btn btn-outline-success", id: "ts-success" %>
                 </nav>
               </div>
             </div>
-          </div>
-
-
-          
+          </div>          
           <table class="table table-hover my-4">
             <thead>
               <tr>

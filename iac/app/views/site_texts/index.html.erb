@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Site Texts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Identification</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @site_texts.each do |site_text| %>
+      <tr>
+        <td><%= site_text.title %></td>
+        <td><%= site_text.description %></td>
+        <td><%= site_text.identification %></td>
+        <td><%= link_to 'Show', site_text %></td>
+        <td><%= link_to 'Edit', edit_site_text_path(site_text) %></td>
+        <td><%= link_to 'Destroy', site_text, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Site Text', new_site_text_path %>

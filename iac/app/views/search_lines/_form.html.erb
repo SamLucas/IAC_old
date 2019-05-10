@@ -1,0 +1,36 @@
+<div class="card col-12">
+  <div class="card-body">
+    <%= form_with(model: search_line, local: true) do |form| %>
+    <% if search_line.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(search_line.errors.count, "error") %> prohibited this search_line from being saved:</h2>
+
+      <ul>
+        <% search_line.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :teacher %>
+      <%= form.text_field :teacher, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "form-control textarea" %>
+    </div>
+
+    <div class="actions form-group">
+      <%= form.submit "Enviar", class: "btn btn-success" %>
+    </div>
+    <% end %>
+  </div>
+</div>
