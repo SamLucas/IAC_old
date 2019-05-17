@@ -13,6 +13,8 @@
     border-radius: 0px;
 }
 
+//teste
+
 .nav-pills>li[data-slide-to="0"].active a { background-color: #16a085; }
 .nav-pills>li[data-slide-to="1"].active a { background-color: #e67e22; }
 .nav-pills>li[data-slide-to="2"].active a { background-color: #2980b9; }
