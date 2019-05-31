@@ -1,5 +1,11 @@
 class SiteTextsController < ApplicationController
   before_action :set_site_text, only: [:show, :edit, :update, :destroy]
+  before_action :st_about
+  before_action :st_members
+  before_action :st_searchlines
+  before_action :st_news
+
+  layout 'admins'
 
   # GET /site_texts
   # GET /site_texts.json
@@ -71,4 +77,25 @@ class SiteTextsController < ApplicationController
     def site_text_params
       params.require(:site_text).permit(:title, :description, :identification)
     end
+
+    # Retorna texto da área sobre
+    def st_about 
+      @st_about = SiteText.first
+    end
+
+    # Retorna texto sobre os membros
+    def st_members 
+      @st_members = SiteText.second
+    end
+
+    # Retorna texto sobre as linhas de pesquisas
+    def st_searchlines 
+      @st_searchlines = SiteText.find(2)
+    end
+
+    # Retorna texto sobre as noticias
+    def st_news 
+      @st_news = SiteText.find(3)
+    end
+
 end

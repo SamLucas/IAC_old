@@ -1,31 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="page-breadcrumb">
+  <div class="row">
+    <div class="col-12 d-flex no-block align-items-center">
+      <div class="ml-auto text-right">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Library</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h1>Site Texts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Identification</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @site_texts.each do |site_text| %>
-      <tr>
-        <td><%= site_text.title %></td>
-        <td><%= site_text.description %></td>
-        <td><%= site_text.identification %></td>
-        <td><%= link_to 'Show', site_text %></td>
-        <td><%= link_to 'Edit', edit_site_text_path(site_text) %></td>
-        <td><%= link_to 'Destroy', site_text, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Site Text', new_site_text_path %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">      
+      <%= render 'form', site_text: @st_about %>
+    </div>
+    <div class="col-6"><%= render 'form', site_text: @st_members %></div>
+    <div class="col-6"><%= render 'form', site_text: @st_members %></div>
+    <div class="col-6"><%= render 'form', site_text: @st_news %></div>
+  </div>
+</div>

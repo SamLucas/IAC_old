@@ -168,6 +168,11 @@
                 <% end %>
               </li>
               <li class="sidebar-item">
+                <%= link_to site_texts_path, class: "sidebar-link waves-effect waves-dark sidebar-link", aria_expanded:"false" do %>
+                <i class="mdi mdi-format-text"></i><span class="hide-menu">Textos do site</span>
+                <% end %>
+              </li>
+              <li class="sidebar-item">
                 <%= link_to root_path, class: "sidebar-link waves-effect waves-dark sidebar-link", aria_expanded:"false" do %>
                 <i class="mdi mdi-earth"></i><span class="hide-menu">Site</span>
                 <% end %>

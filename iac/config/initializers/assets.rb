@@ -13,6 +13,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
+# Carregando os arquivos de configuração do backend
 Rails.application.config.assets.precompile += %w( admins.js admins.css )
 
 # Import files lib/js(backentd)
@@ -93,4 +94,26 @@ Rails.application.config.assets.precompile += %w(
 	TCC_Jose_Luis_Conradi_Hoffmann.pdf
 	TCC_Ricardo_Fritsche_Final.pdf
 	Trabalho_de_Conclus_o_de_Curso___Maurilio_Atila_Carvalho_de_Santana.pdf
+)
+
+# Carregando os arquivos de configuração do frontend
+Rails.application.config.assets.precompile += %w( site.js site.css )
+
+# Import files lib/css(frontend)
+Rails.application.config.assets.precompile += %w(
+	nice_select.css
+	main_frontend.css
+)
+
+# Import files lib/js(frontend)
+Rails.application.config.assets.precompile += %w(
+	main_frontend.js
+	jquery-2.2.4.js
+	poper-1.11.0.js
+	ajaxchimp.js
+)
+
+# Import files lib/img(backentd)
+Rails.application.config.assets.precompile += %w(
+	body.png
 )
