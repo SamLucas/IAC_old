@@ -37,7 +37,7 @@
   color: #777777;
   font-weight: 300;
 }
-
+/*
 body {
   color: #777777;
   font-family: "Poppins", sans-serif;
@@ -47,6 +47,25 @@ body {
   position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+*/
+body {
+  background: url('http://iac.muz.ifsuldeminas.edu.br/img/bacgroud/map.png'); 
+  background-repeat: no-repeat;
+  background-size: 125% 100%;
+  background-attachment: fixed;
+}
+
+
+body:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
 }
 
 ol, ul {
@@ -1900,29 +1919,6 @@ nav a:hover {
   color: white;
 }
 
-body {
-  background-attachment: fixed;
-  background-image: asset_path('body.png');
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-body:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background-image: -moz-linear-gradient(0deg, #e66587 0%, #f09458 100%);
-  background-image: -webkit-linear-gradient(0deg, #e66587 0%, #f09458 100%);
-  background-image: -ms-linear-gradient(0deg, #e66587 0%, #f09458 100%);
-  opacity: 0.6;
-  z-index: -1;
-}
 
 .main-wrapper-first {
   width: 68.75%;
@@ -1973,13 +1969,13 @@ body:after {
 }
 
 .p1-gradient-bg, .primary-btn:after, .banner-area, .single-feature .icon:after, .service-area, .story-area, .single-widget .icon:after {
-  background-image: -moz-linear-gradient(0deg, #e66587 0%, #f09458 100%);
-  background-image: -webkit-linear-gradient(0deg, #e66587 0%, #f09458 100%);
-  background-image: -ms-linear-gradient(0deg, #e66587 0%, #f09458 100%);
+  background-image: -moz-linear-gradient(0deg, #3CB371 0%, #90EE90 100%);
+  background-image: -webkit-linear-gradient(0deg, #3CB371 0%, #90EE90 100%);
+  background-image: -ms-linear-gradient(0deg, #3CB371 0%, #90EE90 100%);
 }
 
 .p1-gradient-color, .single-feature .icon span {
-  background: -webkit-linear-gradient(0deg, #e66587, #f09458);
+  background: -webkit-linear-gradient(0deg, #3CB371, #90EE90);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -2259,7 +2255,7 @@ body:after {
 }
 
 .active-works-carousel .owl-dots .owl-dot.active {
-  background: #e66587;
+  background: #3CB371;
   box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -2392,7 +2388,7 @@ body:after {
   height: 60px;
   width: 60px;
   border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid green;
   position: relative;
 }
 
@@ -2400,7 +2396,7 @@ body:after {
   position: relative;
   z-index: 2;
   font-size: 24px;
-  color: #fff;
+  color: green;
 }
 
 .single-widget .icon:after {
@@ -2429,15 +2425,15 @@ body:after {
 
 .single-widget .desc h6 {
   margin: 20px 0;
-  color: #fff;
+  color: -webkit-linear-gradient(0deg, #3CB371, #90EE90);
 }
 
 .single-widget .desc .contact a {
-  color: #fff;
+  color: -webkit-linear-gradient(0deg, #3CB371, #90EE90);
 }
 
 .single-widget .desc p {
-  color: #fff;
+  color: -webkit-linear-gradient(0deg, #3CB371, #90EE90);
 }
 
 .single-widget:hover .icon {
@@ -2492,9 +2488,9 @@ footer .copy-right-text a {
   position: absolute;
   z-index: 1;
   content: "";
-  background-image: -moz-linear-gradient(0deg, #e66587 0%, #f09458 100%);
-  background-image: -webkit-linear-gradient(0deg, #e66587 0%, #f09458 100%);
-  background-image: -ms-linear-gradient(0deg, #e66587 0%, #f09458 100%);
+  background-image: -moz-linear-gradient(0deg, #3CB371 0%, #90EE90 100%);
+  background-image: -webkit-linear-gradient(0deg, #3CB371 0%, #90EE90 100%);
+  background-image: -ms-linear-gradient(0deg, #3CB371 0%, #90EE90 100%);
   width: 100%;
   height: 100%;
   opacity: 0;

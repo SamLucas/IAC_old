@@ -21,11 +21,11 @@ namespace :dev do
 
 	desc "Adiciona membros aleatórios no BD."
 	task add_members: :environment do
-		15.times do |i|
+		9.times do |i|
 
 			Member.create!(
 				description: Faker::Name.name,
-				formation: "<p>#{Faker::Lorem.paragraph_by_chars(rand(500..770))}</p> <p>#{Faker::Lorem.paragraph_by_chars(rand(500..770))}</p>",
+				formation: "<p>#{Faker::Lorem.paragraph_by_chars(rand(500..750))}</p><p>#{Faker::Lorem.paragraph_by_chars(rand(500..750))}</p>",
 				link_to_lattes: Faker::Internet.url('lattes.com')
 				)
 

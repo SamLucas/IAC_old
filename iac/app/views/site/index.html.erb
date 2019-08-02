@@ -1,1 +1,344 @@
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus facere laudantium, dignissimos nemo odio sint id cum hic recusandae repudiandae quae laboriosam nulla. Laudantium est nisi eligendi odit, impedit unde.
+<header>
+	<div class="container">
+		<div class="header-wrap">
+			<div class="header-top d-flex justify-content-between align-items-center">
+				<div class="logo">
+					<!-- <a href="index.html"><%= image_tag "logo_iac.png", style: "width:100px" %></a> -->
+				</div>
+				<div class="main-menubar d-flex align-items-center">
+					<nav class="hide">
+						<a href="index.html">Home</a>
+						<a href="generic.html">Generic</a>
+						<a href="elements.html">Elements</a>
+					</nav>
+					<div class="menu-bar"><span class="lnr lnr-menu"></span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<div class="banner-area">
+	<div class="container">
+		<div class="row justify-content-center height align-items-center">
+			<div class="col-lg-8">
+				<div class="banner-content text-center">
+					<span class="text-white top text-uppercase">Grupo de pesquisa</span>
+					<h1 class="text-white text-uppercase">Grupo de Pesquisa Informática Aplicada às Ciências</h1>
+					<a href="#" class="primary-btn d-inline-flex align-items-center"><span class="mr-10">Saiba Mais</span><span class="lnr lnr-arrow-right"></span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Start Feature Area -->
+<section class="featured-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="single-feature d-flex flex-wrap justify-content-between">
+					<div class="icon d-flex align-items-center justify-content-center">
+						<span class="lnr lnr-users"></span>
+					</div>
+					<div class="desc">
+						<h6 class="title text-uppercase">Membros</h6>
+						<p>Conheça os integrantes do grupo de pesquisa iac, mebros de diversas areas, como professores alunos e coordenadores...</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="single-feature d-flex flex-wrap justify-content-between">
+					<div class="icon d-flex align-items-center justify-content-center">
+						<span class="lnr lnr-magnifier"></span>
+					</div>
+					<div class="desc">
+						<h6 class="title text-uppercase">Linhas de pesquisa</h6>
+						<p>Over 92% of computers are infected with Adware and spyware. Such software is rarely accompanied by uninstall utility </p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="single-feature d-flex flex-wrap justify-content-between">
+					<div class="icon d-flex align-items-center justify-content-center">
+						<span class="lnr lnr-download"></span>
+					</div>
+					<div class="desc">
+						<h6 class="title text-uppercase">Softwares</h6>
+						<p>If you own an Iphone, you’ve probably already worked out how much fun it is to use it to watch movies-it has that nice big screen</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+</div>
+<div class="main-wrapper">
+	<!-- End Amazing Works Area -->
+	<!-- Start Story Area -->
+	<section class="story-area">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-7">
+					<div class="story-box">
+						<h5 class="text-uppercase text-center">Grupo de Pesquisas Informática Aplicada às Ciências </h5>
+						<p class="mt-4 text-justify" style="color: rgba(0,0,0,0.6);">O Grupo de Pesquisas Informática Aplicada às Ciências (IAC) se formou em 2013 idealizado pelo Prof. Dr. José Antônio Dias Garcia que possuía o interesse de criar ferramentas e metodologias para computação e análise de dados oriundos das ciências agrárias...</p>
+						<a href="#" class="primary-btn hover d-inline-flex align-items-center"><span class="mr-10">Saiba mais</span><span class="lnr lnr-arrow-right"></span></a>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="story-title ml-4">
+						<h3 class="text-uppercase text-white">Nossa história</h3>
+						<span class=" text-white">Um pouco sobre nós</span>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+
+	<!-- Team -->
+	<section id="team" class="pb-5 mt-4">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-12 title-time text-center">
+					<h2 class="text-uppercase"> Nossos Membros</h2>
+					<p class="text-success">Conheça o nosso time.</p>
+				</div>
+
+				<% @membros.each do |membros| %>
+				<!-- Team member -->
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+						<div class="mainflip">
+							<div class="frontside">
+								<div class="card">
+									<div class="card-body text-center">
+										<p> <%= image_tag membros.image, class:  "img-fluid"%></p>
+										<h4 class="card-title"> <%= membros.description %> </p>
+
+										</div>
+									</div>
+								</div>
+								<div class="backside">
+									<div class="card">
+										<div class="card-body text-center mt-4">
+											<h4 class="card-title"> <%= membros.description %></h4>
+											<p class="card-text"> <%= strip_tags(membros.formation.truncate(230)) %></p>
+											<button class="btn btn-outline-success btn-rounded" data-toggle="modal" data-target="#<%= membros.description[1] %><%= membros.id %>">Saiba mais</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<% end %>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- End Amazing Works Area -->
+		<!-- Start Story Area -->
+		<section class="story-area">
+			<div class="container">
+				<div class="row align-items-center">
+					<div role="tabpanel">
+						<div class="col-lg-4">
+							<div class="story-title ml-4">
+								<h3 class="text-uppercase text-white">Linhas de pesquisa</h3>
+								<span class=" text-white">Um pouco sobre nós</span>
+
+								<ul class="nav nav-pills brand-pills nav-stacked" role="tablist">
+									<li role="presentation" class="brand-nav active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Lorem ipsum</a></li>
+									<li role="presentation" class="brand-nav"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Zombie ipsum</a></li>
+									<li role="presentation" class="brand-nav"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Gansta ipsum</a></li>
+									<li role="presentation" class="brand-nav"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">Corporate ipsum</a></li>
+								</ul>
+
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="story-box">
+								<div class="tab-content">
+									<div role="tabpanel" class="tab-pane active" id="tab1">
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt feugiat lorem, at ornare tellus faucibus ut.
+											Curabitur eget metus dapibus nibh laoreet lacinia eget id metus. Mauris quis convallis elit, ac convallis augue. 
+											Pellentesque ornare cursus nibh quis fermentum. Morbi faucibus at tortor sed volutpat. Etiam at ex molestie turpis aliquam auctor.
+											Nulla consequat tristique augue, vel venenatis massa fringilla sit amet. Morbi egestas turpis facilisis sem faucibus finibus.
+										</p>
+										<p>
+											Nam sodales magna eget nulla interdum gravida. Aenean cursus magna vel lorem eleifend, vel eleifend massa rhoncus. 
+											Duis accumsan vehicula ultricies. Proin tincidunt blandit congue. Curabitur semper odio ut malesuada dapibus.
+										</p>
+									</div>
+									<div role="tabpanel" class="tab-pane" id="tab2">
+										<p>
+											Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. 
+											Summus brains sit, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris.
+											Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.
+											Qui animated corpse, cricket bat max brucks terribilem incessu zomby. 
+										</p>
+										<p>
+											The voodoo sacerdos flesh eater, suscitat mortuos comedere 
+											carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. 
+											Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.
+										</p>
+									</div>
+									<div role="tabpanel" class="tab-pane" id="tab3">
+										<p>
+											Lorem ipsizzle dolor away amizzle, consectetuer pizzle elizzle. Nullizzle yo velizzle, check it out volutpizzle, quis, gravida vel, yo.
+											Ma nizzle eget tortor. Sizzle eros. My shizz izzle dolizzle gizzle turpis tempizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle.
+											Maurizzle pellentesque nibh izzle own yo'. Check it out in tortor. Pellentesque fizzle rhoncizzle nisi. 
+										</p>
+										<p>
+											In hac habitasse platea dictumst. Shizzlin dizzle dapibus. You son of a bizzle tellizzle urna, pretizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle,
+											ghetto ac, check it out vitae, nunc. Shizzlin dizzle suscipizzle. Integizzle sempizzle velit sizzle dizzle.
+										</p>
+									</div>
+									<div role="tabpanel" class="tab-pane" id="tab4">
+										<p>
+											Collaboratively administrate empowered markets via plug-and-play networks. 
+											Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without 
+											revolutionary ROI.
+										</p>
+										<p>
+											Efficiently unleash cross-media information without cross-media value. 
+											Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar 
+											solutions without functional solutions.
+										</p>
+										<p>
+											Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate 
+											one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service 
+											for state of the art customer service.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+		<!-- End Story Area -->
+		<!-- Start Subscription Area -->
+		<section class="subscription-area">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<div class="section-title text-center">
+							<h3 class="text-uppercase my-2">Inscreva-se em nossa Newsletter</h3>
+							<span class="text-success">Não fique fora das novidades do Grupo IAC.</span>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-lg-6">
+						<div id="mc_embed_signup">
+							<form target="_blank" novalidate action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01" method="get" class="subscription relative">
+								<input type="email" name="EMAIL" placeholder="Digite seu email..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu email...'" required>
+								<div style="position: absolute; left: -5000px;">
+									<input type="text" name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="">
+								</div>
+								<button class="primary-btn hover d-inline-flex align-items-center"><span class="mr-10">Inscrever-se</span><span class="lnr lnr-arrow-right"></span></button>
+								<div class="info"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Subscription Area -->
+		<!-- Start Footer Widget Area -->
+		<section class="footer-widget-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="single-widget d-flex flex-wrap justify-content-between">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="lnr lnr-pushpin"></span>
+							</div>
+							<div class="desc">
+								<h6 class="title text-uppercase">Address</h6>
+								<p>56/8, panthapath, west <br> dhanmondi, kalabagan, <br>Dhaka - 1205</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="single-widget d-flex flex-wrap justify-content-between">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="lnr lnr-earth"></span>
+							</div>
+							<div class="desc">
+								<h6 class="title text-uppercase">Email Address</h6>
+								<div class="contact">
+									<a href="mailto:info@dataarc.com">info@dataarc.com</a> <br>
+									<a href="mailto:support@dataarc.com">support@dataarc.com</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="single-widget d-flex flex-wrap justify-content-between">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="lnr lnr-phone"></span>
+							</div>
+							<div class="desc">
+								<h6 class="title text-uppercase">Phone Number</h6>
+								<div class="contact">
+									<a href="tel:1545">012 4562 982 3612</a> <br>
+									<a href="tel:54512">012 6321 956 4587</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Footer Widget Area -->
+		<!-- Start footer Area -->
+
+
+
+		<% @membros.each do |membros| %>
+		<!-- The Modal -->
+		<div class="modal fade" id="<%= membros.description[1] %><%= membros.id %>">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title">Dados dos Membros</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+
+					<!-- Modal body -->
+					<div class="modal-body">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-4"><%= image_tag membros.image, style: "width: 100%;" %></div>
+								<div class="col-lg-8">
+									<h3 class="my-2"><%= membros.description %></h3>
+									<div class="my-2"><%= strip_tags(membros.formation) %></div>
+									<a href="<%= membros.link_to_lattes %>" class="text-dark mt-3">Link do lattes</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Modal footer -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<% end %>

@@ -103,6 +103,7 @@ Rails.application.config.assets.precompile += %w( site.js site.css )
 Rails.application.config.assets.precompile += %w(
 	nice_select.css
 	main_frontend.css
+	bootsnip-members.css
 )
 
 # Import files lib/js(frontend)
