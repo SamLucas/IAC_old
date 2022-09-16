@@ -2,7 +2,7 @@
   "name": "iac",
   "private": true,
   "dependencies": {
-    "bootstrap": "4.1.0",
+    "bootstrap": "4.3.1",
     "font-awesome": "^4.7.0",
     "jquery": "3.3.1",
     "linearicons": "^1.0.1",
